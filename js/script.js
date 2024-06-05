@@ -1,8 +1,8 @@
 {
-  function playGame(playerInput) {
+  const playGame = function (playerInput) {
     clearMessages();
 
-    function getMoveName(argMoveId) {
+    const getMoveName = function (argMoveId) {
       if (argMoveId == 1) {
         return "kamień";
       } else if (argMoveId == 2) {
@@ -13,9 +13,9 @@
 
       printMessage("Nie znam ruchu o id " + argMoveId + ".");
       return "nieznany ruch";
-    }
+    };
 
-    function displayResult(argComputerMove, argPlayerMove) {
+    const displayResult = function (argComputerMove, argPlayerMove) {
       console.log("moves:", argComputerMove, argPlayerMove);
 
       if (argComputerMove == "kamień" && argPlayerMove == "papier") {
@@ -39,13 +39,13 @@
       } else {
         printMessage(argPlayerMove);
       }
-    }
+    };
 
-    let randomNumber = Math.floor(Math.random() * 3 + 1);
+    const randomNumber = Math.floor(Math.random() * 3 + 1);
 
     console.log("Wylosowana liczba to: " + randomNumber);
 
-    let computerMove = getMoveName(randomNumber);
+    const computerMove = getMoveName(randomNumber);
 
     /*if (randomNumber == 1) {
   computerMove = "kamień";
@@ -63,7 +63,7 @@
 
     console.log("Gracz wpisał: " + playerInput);
 
-    let playerMove = getMoveName(playerInput);
+    const playerMove = getMoveName(playerInput);
 
     /*if (playerInput == "1") {
   playerMove = "kamień";
@@ -76,7 +76,7 @@
     printMessage("Twój ruch to (gracz): " + playerMove);
 
     displayResult(computerMove, playerMove);
-  }
+  };
 
   document.getElementById("play-rock").addEventListener("click", function () {
     playGame(1);
